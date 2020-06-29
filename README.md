@@ -5,8 +5,9 @@
 
 #### | Reading
 
-- ECMAScript 2015 Features - Babel
+- [ECMAScript 2015 Features - Babel](https://github.com/pluscai/use-es6/issues/1)
 
 #### | Practice
 
-- [示例代码](https://github.com/pluscai/use-vue/tree/master/demo)
+- [示例代码](https://github.com/pluscai/use-es6/tree/master/demo)
+

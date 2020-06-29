@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sym1 = Symbol()
+    let sym2 = Symbol('foo')
+    let sym3 = Symbol('foo')
+    console.log(sym2 === sym3); // false
+    console.log(Symbol('foo') === Symbol('foo')); // false
+
+    let sym = new Symbol()  // TypeError
+</script>
+</body>
+</html>

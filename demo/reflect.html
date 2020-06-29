@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var O = {a: 1};
+    Object.defineProperty(O, 'b', {value: 2});
+    O[Symbol('c')] = 3;
+    console.log(O); // ["a", "b", Symbol(c)]
+
+    console.log(Reflect.ownKeys(O)); // ["a", "b", Symbol(c)]
+
+    function C(a, b){
+        this.c = a + b;
+    }
+    var instance = Reflect.construct(C, [20, 22]);
+    console.log(instance.c); // 42
+</script>
+</body>
+</html>

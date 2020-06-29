@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*const iterable1 = {};
+
+    iterable1[Symbol.iterator] = function* () {
+        yield 1;
+        yield 2;
+        yield 3;
+    };
+
+    console.log([...iterable1]);
+    // expected output: Array [1, 2, 3]
+
+    for (var n of iterable1) {
+        // truncate the sequence at 1000
+        console.log(n); // 依次打印出 1 2 3
+    }*/
+
+   /* function* generator() {
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+
+    const gen = generator(); // "Generator { }"
+    console.log(gen);*/
+
+    /*function* infinite() {
+        let index = 0;
+
+        while (true) {
+            yield index++;
+        }
+    }
+
+    const generator = infinite(); // "Generator { }"
+
+    console.log(generator.next().value); // 0
+    console.log(generator.next().value); // 1
+    console.log(generator.next().value); // 2
+    console.log(generator.next().value); // 3*/
+
+    let fibonacci = {
+        [Symbol.iterator]() {
+            let pre = 0, cur = 1;
+            return {
+                next() {
+                    [pre, cur] = [cur, pre + cur];
+                    return { done: false, value: cur }
+                }
+            }
+        }
+    }
+
+    for (var n of fibonacci) {
+        // truncate the sequence at 1000
+        if (n > 1000)
+            break;
+        console.log(n);
+    }
+
+</script>
+</body>
+</html>
